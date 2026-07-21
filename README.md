@@ -1,8 +1,8 @@
 # Project 1: Agricultural Market Price Transparency In Kenyan Markets
 
-### Ali-Grow
+## ALi-Grow
 
-![Ali-Grow-log](Ali-Grow.jpeg)
+![ALi-Grow Logo](images/Ali-Grow.jpeg)
 
 ## Problem Statement
 Farmers in Kenya receive 30-40% lower prices for their crops because they lack real-time market information. Middlemen exploit this information asymmetry, buying at low prices and selling at high margins.
