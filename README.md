@@ -52,3 +52,7 @@ No simple, accessible platform showing real-time prices across multiple markets 
 3. Allow adding new price entries
 4. Filter by crop type or market
 5. Responsive design for mobile use
+
+### Visit the ready Website 
+https://ali-grow-production.up.railway.app
+
