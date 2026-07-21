@@ -1,8 +1,11 @@
 # Project 1: Agricultural Market Price Transparency In Kenyan Markets
-### ALi-Grow
-[My-Logo](Ali-Grow_wordmark_leaf_2k_202607211325.jpeg)
+
+## ALi-Grow
+
+![ALi-Grow Logo](Ali-Grow_wordmark_leaf_2k_202607211325.jpeg)
+
 ## Problem Statement
-Farmers in Kenya receive 30-40% lower prices for their crops because they lack real-time market information. Middlemen exploit this information asymmetry, buying at low prices and selling at high margins. This project creates a web app that shows real-time crop prices across different markets.
+Farmers in Kenya receive 30-40% lower prices for their crops because they lack real-time market information. Middlemen exploit this information asymmetry, buying at low prices and selling at high margins.
 
 ## Who Benefits
 - **Smallholder farmers** - Get fair prices by knowing market rates
@@ -29,7 +32,7 @@ By completing this project, you will learn:
 ## Phase 1: Understanding the Problem
 
 ### Real-World Context
-In Kenya, a farmer in Nakuru might grow tomatoes but not know that prices in Nairobi's Wakulima Market are 50% higher than at the local market. Without transportation info or market data, they sell to middlemen at low prices.
+In Kenya, a farmer in Nakuru might grow tomatoes but not know that prices in Nairobi's Wakulima Market are 50% higher than at the local market. Without transportation info or market data, they sell to middlemen.
 
 ### Existing Solutions
 - **Twiga Foods** - B2B platform for fresh produce (limited to large buyers)
@@ -49,5 +52,3 @@ No simple, accessible platform showing real-time prices across multiple markets 
 3. Allow adding new price entries
 4. Filter by crop type or market
 5. Responsive design for mobile use
-
-
