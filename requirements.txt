@@ -1,0 +1,5 @@
+# requirements.txt - Lists Python packages needed for this project
+# LEARNING: pip install -r requirements.txt installs all these packages
+# This makes it easy for others to set up the project
+
+Flask==3.0.0

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Price - Ali-Grow</title>
+    <!-- Google Fonts: Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Add New Price</h1>
+            <p class="subtitle">Record current market prices</p>
+        </header>
+
+        <nav>
+            <a href="/" class="nav-link">All Prices</a>
+            <a href="/add_price" class="nav-link active">Add Price</a>
+        </nav>
+
+        
+        <div class="form-container">
+            <form action="/add_price" method="POST">
+                <div class="form-group">
+                    <label for="market_id">Market:</label>
+                    <select name="market_id" id="market_id" required>
+                        <option value="">Select a market</option>
+                        {% for market in markets %}
+                        <option value="{{ market.id }}">{{ market.name }} - {{ market.location }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="crop_id">Crop:</label>
+                    <select name="crop_id" id="crop_id" required>
+                        <option value="">Select a crop</option>
+                        {% for crop in crops %}
+                        <option value="{{ crop.id }}">{{ crop.name }} ({{ crop.unit }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price (KES):</label>
+                    <input type="number" name="price" id="price" 
+                           step="0.01" min="0" required
+                           placeholder="Enter price in KES">
+                </div>
+
+                <button type="submit" class="submit-btn">Add Price</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>© 2024 <span class="brand-ali">Ali</span><span class="brand-grow">-Grow</span>. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

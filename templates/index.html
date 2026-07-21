@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali-Grow</title>
+    <!-- Google Fonts: Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="brand-ali">Ali</span><span class="brand-grow">-Grow</span></h1>
+            <p class="subtitle">Real-time crop prices across Nairobi markets</p>
+        </header>
+
+        <!-- LEARNING: Navigation links -->
+        <nav>
+            <a href="/" class="nav-link active">All Prices</a>
+            <a href="add_price" class="nav-link">Add Price</a>
+            <a href="api/prices" class="nav-link" target="_blank">API</a>
+        </nav>
+
+        <!-- LEARNING: Filter section -->
+        <div class="filter-section">
+            <form action="prices" method="GET">
+                <input type="text" name="crop" placeholder="Filter by crop (e.g., tomatoes)" 
+                       value="{{ filter if filter else '' }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- LEARNING: Price table -->
+        <div class="price-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Market</th>
+                        <th>Location</th>
+                        <th>Crop</th>
+                        <th>Category</th>
+                        <th>Price (KES)</th>
+                        <th>Unit</th>
+                        <th>Recorded</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for price in prices %}
+                    <tr>
+                        <td>{{ price.market_name }}</td>
+                        <td>{{ price.location }}</td>
+                        <td>{{ price.crop_name }}</td>
+                        <td>{{ price.category }}</td>
+                        <td class="price">{{ price.price }}</td>
+                        <td>{{ price.unit }}</td>
+                        <td>{{ price.recorded_at }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                    <!-- LEARNING: Conditional - show message if no prices -->
+                    {% if not prices %}
+                    <tr>
+                        <td colspan="7" class="no-data">No prices found</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Entries</h3>
+                <p>{{ prices|length }}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Markets</h3>
+                <p>{{ prices|map(attribute='market_name')|unique|list|length }}</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 <span class="brand-ali">Ali</span><span class="brand-grow">-Grow</span>. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
