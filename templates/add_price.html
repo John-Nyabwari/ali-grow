@@ -33,9 +33,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="crop_search">Crop:</label>
-                    <input type="text" id="crop_search" placeholder="Type to search crops..."
-                           onkeyup="filterCrops()" autocomplete="off">
                     <select name="crop_id" id="crop_id" required>
                         <option value="">Select a crop</option>
                         {% for crop in crops %}
