@@ -25,9 +25,6 @@
         <div class="form-container">
             <form action="/add_price" method="POST">
                 <div class="form-group">
-                    <label for="market_search">Market:</label>
-                    <input type="text" id="market_search" placeholder="Type to search markets..."
-                           onkeyup="filterMarkets()" autocomplete="off">
                     <select name="market_id" id="market_id" required>
                         <option value="">Select a market</option>
                         {% for market in markets %}
