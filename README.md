@@ -54,5 +54,5 @@ No simple, accessible platform showing real-time prices across multiple markets 
 5. Responsive design for mobile use
 
 ### Visit the ready Website 
-ali-grow.up.railway.app
+https://ali-grow.up.railway.app
 
