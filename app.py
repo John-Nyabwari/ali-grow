@@ -64,12 +64,13 @@ def api_prices():
     return jsonify(price_list)
 
 # Run the application
+import os
+
 if __name__ == '__main__':
     # Initialize database and add sample data
     init_database()
     seed_sample_data()
-    
-    # Start the Flask development server
-    # debug=True shows detailed errors (remove in production)
-    # host='0.0.0.0' makes it accessible from other devices
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+    # Use PORT env var if set (for Railway/Render), else default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
