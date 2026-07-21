@@ -265,6 +265,18 @@ footer {
     margin-top: 100px;
 }
 
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
 /* LEARNING: Responsive design - adjusts layout for mobile devices */
 @media (max-width: 768px) {
     header h1 {
